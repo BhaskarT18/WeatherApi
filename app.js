@@ -1,7 +1,10 @@
 const express= require("express");
 const https=require("https");
 const bodyPaser=require("body-parser")
+const dotenv=require("dotenv");
+dotenv.config();
 const app=express();
+
 
 app.use(bodyPaser.urlencoded({extended:true}));
 
@@ -13,7 +16,7 @@ app.get("/",function(req,res){
 app.post("/", function(req ,res){
 
  const query= req.body.cityName;
-const uniKey="YourUpikey";
+const uniKey="WEATHER_KEY";
 const unit="metric";
 
 const url="https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid="+uniKey+"&units="+unit;
