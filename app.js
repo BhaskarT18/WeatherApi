@@ -16,7 +16,7 @@ app.get("/",function(req,res){
 app.post("/", function(req ,res){
 
 const query= req.body.cityName;
-const uniKey = process.env.WEATHER_KEY;
+const uniKey =process.env.WEATHER_API;
 const unit="metric";
 
 const url="https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid="+uniKey+"&units="+unit;
@@ -42,7 +42,7 @@ https.get(url,function(response){
 })
 
 
-
+ 
  
 app.listen(process.env.PORT,function(){
     console.log("The server is running ");
