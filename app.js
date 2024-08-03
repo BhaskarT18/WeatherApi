@@ -24,7 +24,7 @@ https.get(url,function(response){
     console.log(response.statusCode);
 
     response.on("data",function(data){
-        const weatherData= JSON.parse(data);
+       const weatherData= JSON.parse(data);
        const temp =weatherData.main.temp;
        const weatherDecrip= weatherData.weather[0].description;
        const icon= weatherData.weather[0].icon; 
